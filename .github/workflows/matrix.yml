@@ -4,8 +4,16 @@ jobs:
   build:
     strategy:
       matrix:
-        node-version: [12, 14, 16]
+n 
+        node-version: [12, 14]
         operating-system: [ubuntu-latest, windows-latest]
+        # only runs node 16 on ubuntu (single combination)
+        include:
+          - node-version: 16
+            operating-system: ubuntu-latest
+        exclude:
+          - node-version: 12
+            operating-system: window-latest
     runs-on: ${{ matrix.operating-system }}
     steps:
       - name: Get Code
