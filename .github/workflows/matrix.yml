@@ -4,7 +4,6 @@ jobs:
   build:
     strategy:
       matrix:
-n 
         node-version: [12, 14]
         operating-system: [ubuntu-latest, windows-latest]
         # only runs node 16 on ubuntu (single combination)
