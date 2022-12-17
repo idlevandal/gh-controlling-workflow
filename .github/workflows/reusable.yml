@@ -1,0 +1,10 @@
+name: Reusable Deploy
+# workflow_call allows you to call workflow from another workflow
+# workflow_dispatch lets you run workflow manually
+on: workflow_call
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Outut info
+        run: echo "Deploying and uploading"
